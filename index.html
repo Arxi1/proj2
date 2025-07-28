@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Webpage</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f6f9fa;
+      color: #333;
+    }
+
+    /* Top Navbar */
+    .navbar {
+      background: #cce5ff;
+      padding: 15px 20px;
+      color: #003366;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      position: relative;
+    }
+
+    .menu-icon {
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .title {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    /* Dropdown Menu */
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 60px;
+      left: 15px;
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 5px;
+      width: 150px;
+      z-index: 1000;
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 10px 15px;
+      text-decoration: none;
+      color: #003366;
+      border-bottom: 1px solid #eee;
+    }
+
+    .dropdown a:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown a:hover {
+      background-color: #f0f0f0;
+    }
+
+    /* Main Content */
+    .main-content {
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .main-content h1 {
+      font-size: 36px;
+      font-weight: 700;
+      color: #222;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #e9ecef;
+      color: #555;
+      text-align: center;
+      padding: 12px 0;
+      font-weight: 500;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="menu-icon" onclick="toggleDropdown()">&#9776;</div>
+    <div class="title">My Webpage</div>
+
+    <!-- Dropdown Menu -->
+    <div class="dropdown" id="dropdownMenu">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <h1>Welcome to my webpage</h1>
+  </div>
+
+  <div class="footer">
+    Thank you for Visiting
+  </div>
+
+  <script>
+    function toggleDropdown() {
+      const dropdown = document.getElementById("dropdownMenu");
+      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    }
+
+    // Optional: close dropdown if clicked outside
+    document.addEventListener("click", function(event) {
+      const menuIcon = document.querySelector(".menu-icon");
+      const dropdown = document.getElementById("dropdownMenu");
+      if (!menuIcon.contains(event.target) && !dropdown.contains(event.target)) {
+        dropdown.style.display = "none";
+      }
+    });
+  </script>
+
+</body>
+</html>

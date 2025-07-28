@@ -1,0 +1,54 @@
+header {
+  height: auto;
+  background: linear-gradient(90deg, red, rgb(210, 97, 97));
+  width: 100vw;
+  position: auto;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+footer {
+  height: auto;
+  background: linear-gradient(90deg, red, rgb(155, 60, 60));
+  width: 100vw;
+  position: auto;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+header h1, footer p {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  header h1, footer p {
+    font-size: 1rem;
+    padding: 0 10px;
+    text-align: center;
+  }
+  header, footer {
+    height: 40px;
+  }
+}
+
+@media (min-width: 601px) {
+  header {
+    justify-content: flex-start;
+    padding-left: 16px;
+  }
+}
+
+footer{
+  height: 50px;
+  background-color: aqua;
+
+}
